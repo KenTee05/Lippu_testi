@@ -69,38 +69,14 @@ def test_kokonaishinta_ryhmaalennus():
 def test_opiskelijalippu():
     assert lippuhinta(20, opiskelija=True) == 10.0
 
-def lippuhinta(ika: int, opiskelija: bool = False) -> float:
-    if ika < 0 or ika > 120:
-        raise ValueError("Virheellinen ikä")
-    
-    if ika < 7:
-        return 0.0
-    if opiskelija:
-        return 10.0
-    if ika <= 17:
-        return 8.0
-    if ika >= 65:
-        return 10.0
-    
-    return 15.0
+
 
 
 
 
     #hei testi 2 kun git ei lisännyt
 
-# TEHTÄVÄ 4: Kokonaishinta ja ryhmäalennuksen raja (9 ja 10 lippua).
-def test_kokonaishinta_tyhja():
-    assert kokonaishinta([]) == 0.0
 
 
-def test_kokonaishinta_ei_ryhmaalennusta():
-    iat = [30] * 9
-    assert kokonaishinta(iat) == 9 * AIKUINEN_HINTA
-
-
-def test_kokonaishinta_ryhma_alennus():
-    iat = [30] * 10
-    assert kokonaishinta(iat) == 10 * AIKUINEN_HINTA * 0.9
 
 
