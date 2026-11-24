@@ -41,7 +41,7 @@ joita ohjelman pitäisi käsitellä samalla tavalla. Raja-arvot ovat luokkien re
 | 7–17               | 11              |   6 - 18     |     8e          |
 | 18–64              | 45              |  17  - 65    |    15e          |
 | 65–120             | 100             |   64 - 121   |       10e       |
-| liian suuri ikä    | 121...          |              |      virhe      |
+| liian suuri ikä    | 122...          |     122-...  |      virhe      |
 
 ### Tehtävä 2: raja-arvot parametrisoituna
 
