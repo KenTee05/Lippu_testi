@@ -36,12 +36,12 @@ joita ohjelman pitäisi käsitellä samalla tavalla. Raja-arvot ovat luokkien re
 
 | Ekvivalenssiluokka | Esimerkkiarvo   | Raja-arvot   | Odotettu tulos  |
 | ---                | ---             | ---          | ---             |
-| liian pieni ikä    |                 |              |                 |
-| 0–6                | 4               |  -1 7        |                 |
-| 7–17               | 11              |   6 18       |                 |
-| 18–64              | 45              |  17  65      |                 |
-| 65–120             | 100             |   64 121     |                 |
-| liian suuri ikä    |                 |              |                 |
+| liian pieni ikä    | -1              |  -2          |  virhe          |
+| 0–6                | 4               |  -1 - 7      |     0e          |
+| 7–17               | 11              |   6 - 18     |     8e          |
+| 18–64              | 45              |  17  - 65    |    15e          |
+| 65–120             | 100             |   64 - 121   |       10e       |
+| liian suuri ikä    | 121...          |              |      virhe      |
 
 ### Tehtävä 2: raja-arvot parametrisoituna
 
@@ -82,12 +82,7 @@ Onko jokin rivi testaamatta (sarake `Missing`)? Lisää tarvittaessa testi.
 Korjaa tehtävässä 2 löytämäsi virhe `lippu.py`-tiedostosta ja aja testit uudelleen.
 Kaikkien testien pitää mennä läpi.
 
-### Bonus: staattinen analyysi
 
-```bash
-pip install ruff
-ruff check .
-```
 
 ## Osa B – jatkuva integraatio (kerta 2, pareittain, 20 min)
 
@@ -103,5 +98,4 @@ GitHubissa jokaisesta pushista ja pull requestista.
    CI on punainen, koska toteutus puuttuu.
 4. **B** toteuttaa vaatimuksen `lippu.py`-tiedostoon ja pushaa. CI muuttuu vihreäksi.
 5. **A** katselmoi pull requestin, kommentoi ja yhdistää sen.
-6. Bonus: vaihtakaa rooleja. Uusi vaatimus: *jos ostoksessa on alle 7-vuotias, siinä on oltava
-   myös vähintään yksi 18 vuotta täyttänyt* (muuten `kokonaishinta` nostaa `ValueError`in).
+
